@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tiles</title>
+    <link rel="stylesheet" href="../build/build.css">
+    <style>
+    #tiles {
+      width: 320px;
+      float: left;
+    }
+    .tile {
+      float: left;
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="tiles"></div>
+    <script src="../build/build.js"></script>
+    <script>
+    var map = [
+      [15,15,15,15,15,15,11,12,14,12]
+    , [15,15,15,15,15,15,11,6,8,6]
+    , [15,15,15,15,15,15,11,12,14,12]
+    , [1,2,1,2,1,2,4,8,6,8]
+    , [4,5,4,5,4,5,15,4,5,4]
+    , [15,15,15,15,15,15,15,15,15,15]
+    , [15,15,15,15,15,15,15,15,15,15]
+    , [15,15,15,15,15,15,15,15,15,15]
+    ]
+    var v = require('entity-vector')
+    var Tiles = require('tiles')
+    var tiles = Tiles(document.getElementById('tiles'), 'tiles.png', v(3,6), v(32,32), map)
+    tiles.init()
+    </script>
+  </body>
+</html>
